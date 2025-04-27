@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .flex-container {
+            background-color: rgba(11, 27, 41, 0.695);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            width: 80%;
+        }
+        .left-container {
+            display: flex;
+            flex-direction: column;
+          
+        }
+        .form-container {
+            background-color: rgb(139, 115, 161);
+            width: 350px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .blue-box {
+            background-color: rgb(239, 84, 28);
+            height: 100px;
+            width: 350px;
+        }
+        .right-container {
+            background-color: rgb(200, 200, 200);
+            width: 350px;
+            height: 692px;
+        }
+        .form-container label {
+            font-weight: bold;
+        }
+        .form-container input,
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            padding: 10px;
+            background-color: #434f06;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0a6c96;
+        }
+        .form-container a {
+            color: #44073a;
+            text-decoration: none;
+        }
+        .form-container input[type="radio"] {
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="left-container">
+            <div class="form-container">
+                <form>
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type="password" id="confirmpassword" name="confirmpassword" required>
+                    
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                    
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="UK">UK</option>
+                        <option value="Bangladesh">India</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                    
+                    <label for="color">Select Your Favorite Color:</label>
+                    <input type="color" id="color" name="color">
+                    
+                    <label>Gender:</label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="Male" required> Male
+                        <input type="radio" id="female" name="gender" value="Female"> Female
+                        <input type="radio" id="other" name="gender" value="Other"> Other
+                    </div>
+                    
+                    <label for="terms">
+                        <input type="checkbox" id="terms" name="terms" required> I agree to the <a href="#">Terms and Conditions</a>
+                    </label>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="blue-box"></div>
+        </div>
+        <div class="right-container"></div>
+    </div>
+</body>
+</html>
