@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* 1. Changed body background color to cream */
+            background-color: #f5f5dc;
+            margin: 0;
+            padding: 0;
+        }
+        .main-title {
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+            color: #333;
+        }
+        .flex-container {
+            background-color: rgba(11, 27, 41, 0.695);
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 20px auto;
+            /* 2. Ensure containers stretch to equal height */
+            align-items: stretch;
+        }
+        .left-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container {
+            /* 1. Changed form background color to gray */
+            background-color: #d3d3d3; /* LightGray */
+            width: 350px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px; /* Optional: Slight rounding */
+        }
+        .right-container {
+            background-color: #e8eaed; /* Light blue-gray */
+            width: 400px;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 5px; /* Optional: Slight rounding */
+        }
+        .form-container label {
+            font-weight: bold;
+            margin-top: 5px;
+            color: #333; /* Darker label color for contrast */
+        }
+         .form-container label:first-of-type {
+             margin-top: 0;
+         }
+        .form-container input,
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin: 0 0 10px 0;
+            border: 1px solid #aaa; /* Slightly darker border */
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+         .form-container div {
+             margin-bottom: 10px;
+         }
+          .form-container label[for="terms-checkbox"] {
+              margin-top: 5px;
+              margin-bottom: 10px;
+          }
+        .form-container button {
+            padding: 10px;
+            background-color: #434f06;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .form-container button:hover {
+            background-color: #0a6c96;
+        }
+        .form-container a {
+            color: #44073a;
+            text-decoration: none;
+        }
+        .form-container input[type="radio"],
+        .form-container input[type="checkbox"] {
+            width: auto;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .form-container label[for="terms-checkbox"] {
+           display: inline-flex;
+           align-items: center;
+        }
+        #data-table {
+            width: 100%;
+            border-collapse: collapse;
+            /* Removed margin-top to align better */
+            /* margin-top: 10px; */
+        }
+        #data-table th,
+        #data-table td {
+            border: 1px solid #b0b4b8;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        #data-table th {
+            background-color: #c8ced3;
+            color: #333;
+            font-weight: bold;
+        }
+        #data-table tbody tr:nth-child(even) {
+            background-color: #f2f4f6;
+        }
+        #data-table tbody tr:hover {
+            background-color: #dde2e6;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-title">Air Quality Index</h1>
+
+    <div class="flex-container">
+        <div class="left-container">
+            <div class="form-container">
+                <form id="registrationForm">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="fullname" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirmpassword" required>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="UK">UK</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="India">India</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+
+                    <label for="color">Select Your Favorite Color:</label>
+                    <input type="color" id="color" name="color" value="#e5541c">
+
+                    <label>Gender:</label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="Male" required> Male
+                        <input type="radio" id="female" name="gender" value="Female"> Female
+                        <input type="radio" id="other" name="gender" value="Other"> Other
+                    </div>
+
+                    <label for="terms-checkbox">
+                        <input type="checkbox" id="terms-checkbox" name="terms" required> I agree to the <a href="#">Terms and Conditions</a>
+                    </label>
+
+                    <button type="button" id="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="right-container">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Serial No.</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody id="data-table-body">
+                    <tr> <td>1</td> <td>John Doe</td> </tr>
+                    <tr> <td>2</td> <td>Jane Smith</td> </tr>
+                    <tr> <td>3</td> <td>Michael Brown</td> </tr>
+                    <tr> <td>4</td> <td>Emily Davis</td> </tr>
+                    <tr> <td>5</td> <td>Daniel Wilson</td> </tr>
+                    <tr> <td>6</td> <td>Olivia Taylor</td> </tr>
+                    <tr> <td>7</td> <td>David Johnson</td> </tr>
+                    <tr> <td>8</td> <td>Emma Martinez</td> </tr>
+                    <tr> <td>9</td> <td>James Anderson</td> </tr>
+                    <tr> <td>10</td> <td>Isabella Thomas</td> </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('submit-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const fullName = document.getElementById('full-name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const dobInput = document.getElementById('dob').value;
+            const country = document.getElementById('country').value;
+            const genderSelected = document.querySelector('input[name="gender"]:checked');
+            const color = document.getElementById('color').value;
+            const termsAccepted = document.getElementById('terms-checkbox').checked;
+
+            // --- Validation (Still runs) ---
+            const namePattern = /^[A-Za-z\s]+$/;
+            if (fullName === "" || !namePattern.test(fullName)) {
+                alert("Please enter a valid full name (letters and spaces only).");
+                return;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,6}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            const passPattern = /^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (!password.match(passPattern)) {
+                alert("Password must be at least 8 characters long and contain both letters and numbers.");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+             if (!dobInput) {
+                 alert("Please enter your Date of Birth.");
+                 return;
+            }
+            const dob = new Date(dobInput);
+             if (isNaN(dob.getTime())) {
+                alert("Please enter a valid Date of Birth.");
+                return;
+            }
+
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const m = today.getMonth() - dob.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            if (age < 18) {
+                alert("You must be at least 18 years old (calculated age: " + age + ").");
+                return;
+            }
+
+            if (country === "") {
+                alert("Please select a country.");
+                return;
+            }
+
+            if (!genderSelected) {
+                alert("Please select your gender.");
+                return;
+            }
+
+            if (!termsAccepted) {
+                alert("You must agree to the Terms and Conditions.");
+                return;
+            }
+
+            // --- Add data to table (if all validation passes) ---
+            const tableBody = document.getElementById('data-table-body');
+
+            // Calculate new serial number
+            const newSerialNumber = tableBody.rows.length + 1;
+
+            // Create a new row and cells
+            const newRow = tableBody.insertRow(); // Appends to the end of tbody
+            const cell1 = newRow.insertCell(0); // Insert cell for Serial No.
+            const cell2 = newRow.insertCell(1); // Insert cell for Name
+
+            // Set the text content of the new cells (using textContent is safer)
+            cell1.textContent = newSerialNumber;
+            cell2.textContent = fullName;
+
+            // Optional: Clear the form after successful submission
+            document.getElementById('registrationForm').reset();
+
+            // Removed the success alert
+            // alert('Form data validated successfully!');
+        });
+    </script>
+
+</body>
+</html>
